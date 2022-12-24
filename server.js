@@ -20,9 +20,17 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")));
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")));
 
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.render('index');
+});
+
+app.get('/sign-up', (req, res) => {
+  res.render('sign-up');
 });  
 
+app.get('/lazy-page', (req, res) => {
+  res.render('lazy-page');
+}); 
+
 app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+  console.log('App listening on port 3000!');
 });
